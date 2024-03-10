@@ -17,7 +17,7 @@ namespace AlweStats {
     public class Main : BaseUnityPlugin {
         public const string Plugin_GUID = "Alwe.AlweStats";
         public const string Plugin_Name = "AlweStats";
-        public const string Plugin_Version = "6.0.5";
+        public const string Plugin_Version = "6.0.6";
         private readonly Harmony harmony = new("zAlweNy26.AlweStats");
         public static ConfigFile config;
         public static string statsFilePath;
@@ -71,7 +71,7 @@ namespace AlweStats {
             removeMinimapBiome = Config.Bind("WorldStats", "RemoveMinimapBiome", true, "Toggle the current biome in the top-left corner in minimap");
             daysInWorldsList = Config.Bind("WorldStats", "DaysInWorldsList", true, "Toggle days passed counter in the world list panel");
             customBowCharge = Config.Bind("PlayerStats", "CustomBowCharge", true, "Toggle a custom bow charge bar instead of the vanilla circle that shrinks");
-            //showCustomMinimap = Config.Bind("MapStats", "ShowCustomMinimap", true, "Toggle a custom circular minimap instead of the default one");
+          //  showCustomMinimap = Config.Bind("MapStats", "ShowCustomMinimap", true, "Toggle a custom circular minimap instead of the default one");
             enableRotatingMinimap = Config.Bind("MapStats", "RotatingMinimap", true, "Toggle the rotation for the minimap (prettier when custom minimap is enabled)");
             showCursorCoordinates = Config.Bind("MapStats", "ShowCursorCoordinates", true, "Toggle the cursor coordinates in the bottom-left corner of the large map");
             showEntityPregnancy = Config.Bind("EntityStats", "ShowEntityPregnancy", true, "Toggle the pregnancy percentage when hovering a tamed animal");

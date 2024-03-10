@@ -6,7 +6,6 @@ using UnityEngine.UI;
 namespace AlweStats {
     public class Block {
         private readonly GameObject blockObj = null;
-
         public Block(string name, string color, int size, string position, string margin, string align = "") {
             blockObj = new(name);
             blockObj.transform.SetParent(Hud.instance.m_rootObject.transform);
@@ -26,7 +25,7 @@ namespace AlweStats {
             textObj.transform.SetParent(group.transform);
             Text blockText = textObj.AddComponent<Text>();
             blockText.color = Utilities.StringToColor(color);
-            blockText.font = MessageHud.instance.m_messageCenterText.font;
+            blockText.font = Font.CreateDynamicFontFromOSFont("Arial", size);
             blockText.fontSize = size;
             blockText.enabled = true;
             TextAnchor textAlignment;

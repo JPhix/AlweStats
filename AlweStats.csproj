@@ -5,7 +5,7 @@
     <TargetFramework>net4.8</TargetFramework>
     <AssemblyName>AlweStats</AssemblyName>
     <Description>Easily read stats about almost everything !</Description>
-    <Version>6.0.5</Version>
+    <Version>6.0.6</Version>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>latest</LangVersion>
     <Copyright>zAlweNy26</Copyright>
@@ -90,25 +90,15 @@
 
     <Message Text="MERGING: @(InputAssemblies->'%(Filename)') into $(OutputAssembly)" Importance="High" />
     
-    <ILRepack
-      Parallel="true"
-      Internalize="true"
-      DebugInfo="true"
-      InputAssemblies="@(InputAssemblies)"
-      TargetKind="SameAsPrimaryAssembly"
-      OutputFile="$(TargetPath)"
-      LibraryPath="$(OutputPath)" 
-    />
+    <ILRepack Parallel="true" Internalize="true" DebugInfo="true" InputAssemblies="@(InputAssemblies)" TargetKind="SameAsPrimaryAssembly" OutputFile="$(TargetPath)" LibraryPath="$(OutputPath)" />
   </Target>
   <Target Name="CopyDLL" AfterTargets="ILRepacker">
     <ItemGroup>
-      <Files Include="$(TargetDir)$(ProjectName).dll"/>
-      <Files Include="$(SolutionDir)AlweStats.translations.json"/>
+      <Files Include="$(TargetDir)$(ProjectName).dll" />
+      <Files Include="$(SolutionDir)AlweStats.translations.json" />
     </ItemGroup>
 
-    <Copy
-      SourceFiles="@(Files)"
-      DestinationFolder="C:\Users\danyn\AppData\Roaming\r2modmanPlus-local\Valheim\profiles\Default\BepInEx\plugins\Padank-AlweStats\" />
+    <Copy SourceFiles="@(Files)" DestinationFolder="C:\Users\Jolyo\AppData\Roaming\r2modmanPlus-local\Valheim\profiles\JPhix\BepInEx\plugins\Padank-AlweStats\" />
 
     <Message Text="Copied to Valheim plugins folder." Importance="High" />
   </Target>
